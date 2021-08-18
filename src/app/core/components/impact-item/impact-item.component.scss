@@ -1,0 +1,57 @@
+.impact-item {
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  .rounded-value-all {
+    border-radius: 10px;
+    padding: 0 3px;
+    position: absolute;
+  }
+}
+.imapct-container {
+  display: flex;
+  position: relative;
+  font-size: 14px;
+  font-weight: normal;
+  .loss {
+    @extend .impact-item;
+    background-color: #fb0505;
+    position: absolute;
+    right: 75%;
+    max-width: 35%;
+    .rounded-value {
+      @extend .rounded-value-all;
+      background-color: #fb0505;
+      border: 1px solid #fff;
+    }
+  }
+  .target {
+    @extend .impact-item;
+    background-color: #717171;
+    left: 25%;
+    position: absolute;
+    .rounded-value {
+      @extend .rounded-value-all;
+      background-color: #717171;
+      border: 1px solid #fff;
+    }
+  }
+  .additional {
+    @extend .impact-item;
+    background-color: #44c034;
+    color: black;
+    position: absolute;
+    .rounded-value {
+      @extend .rounded-value-all;
+      background-color: #44c034;
+      border: 1px solid #fff;
+      color: #fff;
+    }
+  }
+  .total {
+    position: absolute;
+    right: 2rem;
+  }
+}

@@ -1,0 +1,163 @@
+<p-toast [baseZIndex]="1030" position="top-right"></p-toast>
+
+<div class="p-grid login-container">
+  <div class="p-col-12">
+    <div class="p-grid">
+      <div class="p-col-12 header">
+        <span class="main-header">Welcome</span>
+      </div>
+      <div class="p-col-12 content-container">
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+          <div class="p-fluid content">
+            <div class="p-field" style="padding-bottom: 20px">
+              <label for="username1">Email</label>
+              <span class="p-input-icon-right">
+                <i class="pi pi-user"></i>
+                <input
+                  class="textstyle"
+                  formControlName="username"
+                  oninput="this.value = this.value.toLowerCase()"
+                  type="text"
+                  pInputText
+                  (keydown)="onChange()"
+                />
+              </span>
+              <span
+                class="text-danger"
+                *ngIf="
+                  (loginFormControl.username.touched || submitted) &&
+                  loginFormControl.username.errors?.required
+                "
+              >
+                Email is required
+              </span>
+              <span
+                class="text-danger"
+                *ngIf="
+                  loginFormControl.username.touched &&
+                  loginFormControl.username.errors?.email
+                "
+              >
+                Enter a valid email address
+              </span>
+            </div>
+
+            <div class="p-field" style="padding-bottom: 30px">
+              <label for="username1">Password</label>
+              <span class="p-input-icon-right">
+                <i *ngIf="!hide" class="pi pi-eye" (click)="hide = !hide"></i>
+                <i
+                  *ngIf="hide"
+                  class="pi pi-eye-slash"
+                  (click)="hide = !hide"
+                ></i>
+                <input
+                  formControlName="password"
+                  class="input-text textstyle"
+                  [type]="hide ? 'password' : 'text'"
+                  pInputText
+                  (keydown)="onChange()"
+                />
+              </span>
+              <span
+                class="text-danger"
+                *ngIf="
+                  (loginFormControl.password.touched || submitted) &&
+                  loginFormControl.password.errors?.required
+                "
+              >
+                Password is required
+              </span>
+            </div>
+            <div class="p-field" style="padding-bottom: 30px; float: right; color: #0d6efd;
+            cursor: pointer;">
+              <a  (click)="display=true">Forgot Password?</a>
+            </div>
+            <div class="p-field">
+            <div class="p-field-checkbox">
+              <p-checkbox
+                formControlName="remember"
+                inputId="binary"
+              ></p-checkbox>
+              <label style="margin-left: 5px;" for="binary">Remember me</label>
+            </div>
+          </div>
+            <div class="p-field" style="padding-bottom: 20px">
+              <button
+                pButton
+                label="Login"
+                type="submit"
+                class="p-button-raised p-button-rounded"
+              ></button>
+            </div>
+            <div *ngIf="error !== ''" class="p-field error">
+              <span class="text-danger">{{ error }}</span>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<p-dialog [(visible)]="display" [dismissableMask]="false" overlay="true" [modal]="true"
+ [closeOnEscape]="true" [closable]="true" style="border-radius: 26px;">
+  <ng-template pTemplate="header" >
+      <div class="p-col-12">
+        <div class="p-grid">
+          <div class="p-col-12 header" style="height: 55px;" >
+            <span class="main-header" style="font-size: 25px;">Forgot Password?</span>
+          </div>
+          </div>
+          </div>
+  </ng-template>
+  <div class="p-col-12 content-container">
+    <form [formGroup]="forgotForm" (ngSubmit)="Forgot()">
+      <div class="p-fluid content">
+        <div class="p-field" style="padding-bottom: 45px">
+          <label >Email</label>
+          <span class="p-input-icon-right">
+            <i class="pi pi-user"></i>
+            <input
+              class="textstyle"
+              formControlName="username"
+              oninput="this.value = this.value.toLowerCase()"
+              type="text"
+              pInputText
+              (keydown)="onChange()"
+            />
+          </span>
+          <span
+            class="text-danger"
+            *ngIf="
+              (forgotFormControl.username.touched || submitted) &&
+              forgotFormControl.username.errors?.required
+            "
+          >
+            Email is required
+          </span>
+          <span
+            class="text-danger"
+            *ngIf="
+            forgotFormControl.username.touched &&
+            forgotFormControl.username.errors?.email
+            "
+          >
+            Enter a valid email address
+          </span>
+        </div>
+        <div class="p-field fgSubmit" style="padding-bottom: 20px; text-align: center;">
+          <button
+            pButton
+            label="Submit"
+            type="submit"
+            class="p-button-raised p-button-rounded"
+          ></button>
+        </div>
+        <div *ngIf="error !== ''" class="p-field error">
+          <span class="text-danger">{{ error }}</span>
+        </div>
+</div></form></div>
+  <p-footer>
+  
+  </p-footer>
+</p-dialog>

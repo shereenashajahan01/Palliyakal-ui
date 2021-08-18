@@ -1,0 +1,173 @@
+.login-container {
+  width: 379.51px;
+  height: 453.77px;
+  background: #ffffff;
+  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.25);
+  border-radius: 25px;
+  position: absolute;
+  top: calc(50% - 453.77px / 2);
+  right: 15%;
+
+  @media only screen and (max-width: 600px) {
+    width: 320px;
+    right: calc(50% - 320px / 2);
+  }
+}
+.textstyle {
+  background: #ffffff;
+  mix-blend-mode: normal;
+  box-shadow: inset 2px 2px 2px rgb(0 0 0 / 25%);
+  border-radius: 6px;
+}
+.p-button {
+  border: 1px solid #2a9602;
+  background: #2a9602;
+  mix-blend-mode: normal;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.25);
+  border-radius: 6px;
+}
+.p-button:enabled:hover {
+  background: #2a9602;
+  border-color: #2a9602;
+}
+.header {
+  width: 379.51px;
+  height: 62px;
+  background: linear-gradient(273.1deg, #5b5b5b 4.73%, #9c9c9c 107.17%);
+  //font-family: Roboto;
+  font-style: normal;
+  font-size: 30px;
+  line-height: 55px;
+  text-align: center;
+  vertical-align: middle;
+  color: #ffffff;
+
+  @media only screen and (max-width: 600px) {
+    width: 320px;
+  }
+}
+
+.content {
+  margin: auto;
+  margin-top: 12%;
+  width: 75%;
+}
+
+.icon {
+  color: grey;
+  cursor: pointer;
+}
+
+.rememberme {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 14px;
+  color: #333333;
+}
+
+.submit {
+  margin-top: 15%;
+  border-radius: 0px;
+  width: 100%;
+}
+
+:host ::ng-deep .mat-form-field-label {
+  color: gray;
+  font-style: italic !important;
+}
+
+:host ::ng-deep .mat-form-field {
+  width: 100%;
+}
+
+// overwrite the checkbox background
+:host::ng-deep .mat-checkbox-checked .mat-checkbox-background,
+.mat-checkbox-indeterminate .mat-checkbox-background {
+  background-color: black !important;
+}
+
+// overwrite the ripple overlay on hover and click
+:host
+  ::ng-deep
+  .mat-checkbox:not(.mat-checkbox-disabled)
+  .mat-checkbox-ripple
+  .mat-ripple-element {
+  background-color: black !important;
+}
+
+.error {
+  margin: auto;
+  margin-top: 15px;
+  width: 100%;
+  text-align: center;
+}
+.username {
+  text-transform: lowercase;
+}
+
+@media (max-width: 1600px) {
+  .login-container {
+    zoom: 90%;
+  }
+}
+
+@media (max-width: 1400px) {
+  .login-container {
+    zoom: 85%;
+  }
+}
+
+@media (max-width: 1280px) {
+  .login-container {
+    zoom: 80%;
+  }
+}
+.pi {
+  font-size: 1.4rem !important;
+}
+.ui-confirmdialog.ui-dialog {
+  width: 34em;
+  background-color: white;
+
+  & .ui-dialog-titlebar {
+    padding: 0.5em 0.667em;
+    font-size: 1.3125rem;
+    font-weight: bold;
+    color: orange;
+  }
+
+  & .ui-dialog-content {
+    padding: 1em;
+  }
+}
+body .ui-widget-overlay {
+  background-color: #424242;
+  opacity: 0.7;
+  filter: alpha(opacity=70);
+}
+:host ::ng-deep .p-dialog .p-dialog-header {
+  padding: 0px !important;
+}
+:host ::ng-deep .p-dialog .p-dialog-header {
+  background: linear-gradient(
+    273.1deg,
+    #5b5b5b 4.73%,
+    #9c9c9c 107.17%
+  ) !important;
+}
+:host ::ng-deep .p-dialog .p-dialog-footer {
+  text-align: center !important;
+  border-bottom-right-radius: 26px;
+  border-bottom-left-radius: 26px;
+}
+.fgSubmit ::ng-deep .p-button {
+  width: 200px !important;
+}
+:host::ng-deep .p-dialog .p-dialog-header .p-dialog-header-icon {
+  color: white !important;
+}
+::ng-deep .p-checkbox .p-checkbox-box {
+  width: 16px;
+  height: 16px;
+}

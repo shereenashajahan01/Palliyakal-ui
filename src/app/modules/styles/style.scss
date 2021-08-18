@@ -1,0 +1,74 @@
+// variables
+$darkredTitle: #a20202;
+$borderGrey: #acacac;
+$dashedBorderColor: #bfbebe;
+$white: #ffffff;
+$black: #000000;
+$black0c: #0c0c0c;
+$black34: #343434;
+$black30: #303030;
+$darkredValue: #950101;
+$redValue: #fb0505;
+$green: #44c034;
+$grey65: #656565;
+$darkBrown: #3f2424;
+$greyCe: #cecece;
+$grayLight: #f2f2f2;
+
+// Mixins
+@mixin font-14 {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 14px;
+  text-align: center;
+  text-transform: uppercase;
+}
+// size 14, line height 12
+@mixin font-14-12 {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 12px;
+  text-align: center;
+  text-transform: uppercase;
+}
+@mixin font-16 {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16.2715px;
+  line-height: 19px;
+  text-align: center;
+  text-transform: uppercase;
+}
+@mixin font-24 {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 29px;
+  letter-spacing: 0.2px;
+  text-transform: uppercase;
+}
+
+@mixin font-28-600 {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 28px;
+  line-height: 29px;
+  text-align: center;
+}
+
+@mixin font-13-600 {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 13px;
+  line-height: 16px;
+}
+
+@mixin font-3-500 {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 3em;
+  line-height: 36px;
+  text-align: center;
+}

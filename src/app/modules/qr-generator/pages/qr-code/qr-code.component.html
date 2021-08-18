@@ -1,0 +1,173 @@
+<p-confirmDialog #confirmDialogRef>
+  <p-footer>
+    <button (click)="confirmDialogRef.reject()" class="btn btn-secondary mr-2" type="button">
+      <i class="pi pi-times"></i>
+      Cancel
+    </button>
+    <button (click)="confirmDialogRef.accept()" class="btn btn-danger" type="button">
+      <i class="pi pi-check"></i>
+      Delete
+    </button>
+  </p-footer>
+</p-confirmDialog>
+<p-toast [baseZIndex]="1030" position="top-right"></p-toast>
+
+<div class="row align-items-center mt-5">
+  <div class="col-md-4">
+    <h3 class="mb-0">Generate QR Code</h3>
+  </div>
+  <div class="col-md-4 text-md-right text-left mt-3 mt-md-0" style="text-align: center;">
+    <input
+      type="file"
+      #file
+      name="File Upload"
+      id="csvFileUpload"
+      accept=".csv"
+      style="display: none"
+      (change)="fileChangeListener($event)"
+    />
+    <button
+      pButton
+      label="UPLOAD FILE"
+      type="submit"
+      class="p-button-raised upload-btn"
+      (click)="file.click()"
+    ></button>
+  </div>
+</div>
+
+<div class="row mt-3" >
+  <div class="col-md-12">
+    <p-table
+      [value]="farmerList"
+      selectionMode="single"
+      [resizableColumns]="true"
+      [scrollable]="true"
+      scrollHeight="450px"
+      [columns]="cols"
+      [globalFilterFields]="cols"
+      class="farmer-table"
+      #dt
+    >
+    <ng-template pTemplate="caption">
+      <div class="p-d-flex" style="display: flex;justify-content: space-between;">
+        <span class="p-input-icon-right p-ml-auto m-1">
+          <i class="pi pi-search search-icon"></i>
+          <input
+            pInputText
+            type="text"
+            (input)="applyFilterGlobal($event, 'contains', 'dt')"
+            placeholder="Search keyword"
+          />
+        </span>
+        <!-- <button
+          type="button"
+          pButton
+          pRipple
+          icon="pi pi-file-o"
+          (click)="dt.exportCSV()"
+          class="p-button-info"
+          pTooltip="Export CSV"
+          tooltipPosition="bottom"
+        ></button> -->
+        <button (click)="delete()" class="btn remove-btn" style="margin-right: 10px;"
+          pTooltip="Clear"
+          tooltipPosition="bottom">
+    <i class="pi pi-trash" style="color:red;"></i>
+  </button>
+      </div>
+    </ng-template>
+      <ng-template pTemplate="colgroup">
+        <colgroup>
+          <col style="width: 15%" />
+          <col style="width: 16%" />
+          <col style="width: 18%" />
+          <col style="width: 18%" />
+          <col style="width: 18%" />
+          <col style="width: 10%" />
+          <col style="width: 10%" />
+          <col style="width: 18%" />
+          <col style="width: 8%" />
+          <col style="width: 7%" />
+
+        </colgroup>
+      </ng-template>
+      <ng-template pTemplate="header">
+        <tr>
+          <th pResizableColumn pSortableColumn="date">Date<p-sortIcon field="date"></p-sortIcon></th>
+          <th pResizableColumn pSortableColumn="shgArea">SHG Area<p-sortIcon field="shgArea"></p-sortIcon></th>
+          <th pResizableColumn pSortableColumn="shgType">SHG Type<p-sortIcon field="shgType"></p-sortIcon></th>
+          <th pResizableColumn pSortableColumn="product">Product<p-sortIcon field="product"></p-sortIcon></th>
+          <th pResizableColumn pSortableColumn="farmerName">Farmer Name<p-sortIcon field="farmerName"></p-sortIcon></th>
+          <th pResizableColumn pSortableColumn="code">Code<p-sortIcon field="code"></p-sortIcon></th>
+          <th pResizableColumn >QR</th>
+          <th pResizableColumn>Link</th>
+          <th pResizableColumn></th>
+          <th pResizableColumn></th>
+
+        </tr>
+      </ng-template>
+      <ng-template let-rowData let-rowIndex="rowIndex" pTemplate="body">
+        <tr
+          (click)="onRowClick($event, rowData, rowIndex)"
+          [ngClass]="{
+            highlight: rowSelectionConfig.rowIndex === rowIndex,
+            'cursor-pointer': true
+          }"
+          [pSelectableRow]="rowData"
+          style="font-size: .9rem;"
+        >
+          <td>{{ rowData?.date }}</td>
+          <td>
+            {{ rowData?.shgArea }}
+          </td>
+          <td style="word-wrap: break-word;
+          white-space: initial;">{{ rowData?.shgType }}</td>
+          <td>{{ rowData?.product }}</td>
+          <td style="word-wrap: break-word;
+          white-space: initial;">{{ rowData?.farmerName | titlecase }}</td>
+          <td>{{ rowData?.code }}</td>
+          <td> <img *ngIf="rowData.qrCode"
+            src="data:image/jpeg;base64,{{rowData.qrCode}}"
+            width="60%"
+            height="60%"
+          /></td>
+          <td style="word-wrap: break-word; white-space:initial;">
+            <a  style="color: #0d6efd; " *ngIf="!rowData.qrCode" (click)="generateQR(rowData)"
+              >Generate QR Code</a
+            >
+           <a style="font-size: 11px;" *ngIf="rowData.qrCode" routerLink="/safetoeatkerala/{{rowData.code}}" target="_blank">http://localhost:4200/safetoeatkerala/{{rowData.code}}</a>
+           <div style="width:2px;height:0px">
+             <qrcode *ngIf="isQrcode && rowData.code==currentCode && !rowData.qrCode"
+              [qrdata]="selectedCode"
+              [width]="5"
+              cssClass="resize"
+              errorCorrectionLevel="medium"
+              [id]="rowData.code"
+              elementType="img"
+            ></qrcode>
+          </div>
+          </td>
+          <td>
+            <a *ngIf="rowData.qrCode"[href]="href" (click)="print(rowData)" style="color: #495057;"
+              ><i class="pi pi-print" style="font-size: 1rem; cursor: pointer;"></i
+            ></a>
+            
+           
+          </td>
+          <td><button (click)="deleteCustomer(rowData)" class="btn remove-btn"
+            pTooltip="Delete Farmer"
+            tooltipPosition="bottom">
+      <i class="pi pi-trash" style="color:red;"></i>
+    </button></td>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="emptymessage">
+        <tr>
+          <td colspan="13">No data found.</td>
+        </tr>
+      </ng-template>
+    </p-table>
+  </div>
+</div>
+

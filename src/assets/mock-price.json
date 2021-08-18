@@ -1,0 +1,211 @@
+{
+  "chartData": {
+    "chartOptions": {
+      "series": [
+        {
+          "name": "Trackmobile LLC",
+          "data": [[6.5, 20, 50]]
+        },
+        {
+          "name": "Stewart & Stevenson LLC",
+          "data": [[7.5, 25, 40]]
+        },
+        {
+          "name": "ShuttleWagon",
+          "data": [[6.5, 28, 30]]
+        },
+        {
+          "name": "CSX transpotation",
+          "data": [[10, 18, 60]]
+        }
+      ],
+      "chart": {
+        "height": 350,
+        "type": "bubble"
+      },
+      "dataLabels": {
+        "enabled": false
+      },
+      "fill": {
+        "opacity": 0.8
+      },
+      "title": {
+        "text": "DBU Margin %"
+      },
+      "xaxis": {
+        "tickAmount": 20,
+        "type": "category"
+      },
+      "yaxis": {
+        "max": 30
+      }
+    },
+    "chartDetails": {
+      "oem1": [
+        { "viewValue": "Trackmobile LLC", "value": 1 },
+        { "viewValue": "test LLC", "value": 2 },
+        { "viewValue": "Test2 LLC", "value": 3 }
+      ],
+      "oem2": [
+        { "viewValue": "RAIL", "value": 1 },
+        { "viewValue": "test", "value": 2 },
+        { "viewValue": "Test2", "value": 3 }
+      ],
+      "oem3": [
+        { "viewValue": "RAIL CAR MOVERS", "value": 1 },
+        { "viewValue": "test", "value": 2 },
+        { "viewValue": "Test2", "value": 3 }
+      ],
+      "oem4": [
+        { "viewValue": "Construction", "value": 1 },
+        { "viewValue": "test", "value": 2 },
+        { "viewValue": "Test2", "value": 3 }
+      ],
+      "engine1": [
+        { "viewValue": "B6.5", "value": 1 },
+        { "viewValue": "test LLC", "value": 2 },
+        { "viewValue": "Test2 LLC", "value": 3 }
+      ],
+      "engine2": [
+        { "viewValue": "TIER FINAL", "value": 1 },
+        { "viewValue": "test", "value": 2 },
+        { "viewValue": "Test2", "value": 3 }
+      ],
+      "engine3": [
+        { "viewValue": "173", "value": 1 },
+        { "viewValue": "test", "value": 2 },
+        { "viewValue": "Test2", "value": 3 }
+      ],
+      "engine4": [
+        { "viewValue": "1254563", "value": 1 },
+        { "viewValue": "test", "value": 2 },
+        { "viewValue": "Test2", "value": 3 }
+      ]
+    }
+  },
+  "marginsData": {
+    "current": 10,
+    "proposed": 16,
+    "selections": ["Track Mobile", "B6.7", "Rail", "Rail Car Movers"],
+    "marginData": [
+      {
+        "title": "TRACKMOBILE ACROSS ENGINES THEY BOUGHT",
+        "range": {
+          "start": 0,
+          "end": 100,
+          "rangeStart": 20.7,
+          "rangeEnd": 22.3,
+          "average": 20.8
+        }
+      },
+      {
+        "title": "Range across RAIL CAR MOVERS",
+        "range": {
+          "start": 0,
+          "end": 100,
+          "rangeStart": 20.7,
+          "rangeEnd": 27.3,
+          "average": 24.4
+        }
+      },
+      {
+        "title": "Range across RAIL",
+        "range": {
+          "start": 0,
+          "end": 100,
+          "rangeStart": 9,
+          "rangeEnd": 36.1,
+          "average": 16.4
+        }
+      },
+      {
+        "title": "B6.7 T4F 173HP ACROSS CUSTOMERS",
+        "range": {
+          "start": 0,
+          "end": 100,
+          "rangeStart": 20.7,
+          "rangeEnd": 27.3,
+          "average": 24.4
+        }
+      },
+      {
+        "title": "B6.7 T4F  ACROSS CUSTOMERS",
+        "range": {
+          "start": 0,
+          "end": 100,
+          "rangeStart": 0.2,
+          "rangeEnd": 39.1,
+          "average": 18.2
+        }
+      }
+    ]
+  },
+  "sliderRanges": [
+    {
+      "rangeStart": 14500,
+      "rangeEnd": 18000,
+      "start": 10858,
+      "end": 42665,
+      "average": 15379
+    },
+    {
+      "rangeStart": 17500,
+      "rangeEnd": 23000,
+      "start": 10858,
+      "end": 42665,
+      "average": 19379
+    }
+  ],
+  "ranges": [
+    {
+      "label": "Floor",
+      "start": 17871,
+      "end": 20000,
+      "color": "#E0E0E0",
+      "labelColor": "default"
+    },
+    {
+      "label": "Current",
+      "start": 20000,
+      "end": 22547,
+      "color": "#D1D0D0",
+      "labelColor": "default"
+    },
+    {
+      "label": "Target",
+      "start": 22547,
+      "end": 23249,
+      "color": "#B3B3B3",
+      "labelColor": "darkred"
+    },
+    {
+      "label": "Ask",
+      "start": 23549,
+      "end": 24000,
+      "color": "#FB0505",
+      "labelColor": "red"
+    },
+    {
+      "label": "Best",
+      "start": 24000,
+      "end": 24500,
+      "color": "#DAD9D9",
+      "labelColor": "default"
+    }
+  ],
+  "currentPrice": {
+    "title": "Current Price",
+    "value": 20784,
+    "marginText": "10% Margin"
+  },
+  "targetPrice": {
+    "title": "Target Price",
+    "value": 21768,
+    "marginText": "16% Margin"
+  },
+  "askPrice": {
+    "title": "Ask Price",
+    "value": 22000,
+    "marginText": "20% Margin"
+  }
+}

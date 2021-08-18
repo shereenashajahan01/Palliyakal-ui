@@ -1,0 +1,145 @@
+.header {
+  position: relative;
+  height: 68px;
+  background: linear-gradient(90deg, #149100 9.96%, #46b603 100%);
+  z-index: 11;
+}
+
+.cummins-logo-container {
+  position: absolute;
+  left: 6.53%;
+  top: 20.59%;
+}
+
+.cummins-logo {
+  height: 50px;
+  width: 210px;
+  background: url("/assets/images/logo.svg");
+  background-repeat: no-repeat;
+  float: left;
+}
+
+.header-text {
+  //font-family: SF UI Text;
+  margin-left: 10px;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 28px;
+  line-height: 33px;
+  letter-spacing: 0.2px;
+  text-transform: uppercase;
+  color: #ffffff;
+  float: left;
+  margin-top: 20px;
+  .version-text {
+    font-size: 14px;
+    text-transform: none;
+  }
+
+  @media only screen and (max-width: 600px) {
+    font-size: 22px;
+    line-height: 33px;
+  }
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.right-section {
+  margin-top: 15px;
+  margin-right: 35px;
+}
+
+.welcome-text {
+  //font-family: SF UI Text;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 17px;
+  text-align: center;
+  letter-spacing: 0.2px;
+  text-transform: capitalize;
+  vertical-align: bottom;
+  color: #ffffff;
+  margin-top: 10px;
+}
+
+.icon {
+  width: 37px;
+  height: 25px;
+  color: #ffffff;
+}
+.mobile-icon {
+  margin-left: 25px;
+  color: #ffffff;
+}
+.menu {
+  background-color: #950101;
+  color: #ffffff;
+  border: none;
+}
+button:focus {
+  outline: 0;
+}
+::ng-deep .mat-menu-panel {
+  padding: 0 10px !important;
+  min-width: 100% !important;
+  margin-top: 17px;
+  background: linear-gradient(90deg, #ff0404 0%, #950101 40.62%);
+}
+::ng-deep .cdk-overlay-connected-position-bounding-box {
+  display: initial !important;
+}
+::ng-deep .mat-menu-item {
+  text-align: right !important;
+}
+
+.mat-divider {
+  border-top-color: white;
+}
+.mat-button {
+  width: 0% !important;
+  color: white;
+}
+.bell-icon {
+  position: relative;
+}
+.txt {
+  background-color: red;
+  color: white;
+  line-height: 20px;
+  font-size: 12px;
+  position: absolute;
+  padding: 2px;
+  top: -10px;
+  left: 13px;
+  height: 18px;
+  width: 18px;
+  border-radius: 25px;
+  border: 2px solid;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.admin {
+  font-size: 2rem;
+}
+
+@media (max-width: 1600px) {
+  .header {
+    zoom: 90%;
+  }
+}
+
+@media (max-width: 1400px) {
+  .header {
+    zoom: 75%;
+  }
+}
+
+@media (max-width: 1280px) {
+  .header {
+    zoom: 65%;
+  }
+}

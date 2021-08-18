@@ -1,0 +1,324 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~bootstrap/dist/css/bootstrap.css';
+
+html,
+body {
+  font-size: 14px;
+  height: 100%;
+  color: #4d4d4d;
+  overflow-x: hidden;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+tr {
+  outline: none;
+}
+
+.h-100 {
+  @media only screen and (max-width: 767px) {
+    height: auto !important;
+  }
+}
+
+.btn-primary {
+  background-color: #008fff;
+}
+.navbar-collapse {
+  flex-grow: 0 !important;
+}
+.btn-info {
+  background-color: #f1e0ff;
+  border-color: #f1e0ff;
+}
+
+.btn-back {
+  background-color: transparent;
+  padding: 0;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: #cb5310;
+}
+
+.btn-text {
+  border: 0;
+  background-color: transparent;
+  color: #008fff;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 1.1rem;
+}
+
+.wrapper {
+}
+
+#page-content-wrapper {
+  overflow-y: auto;
+  flex-grow: 1;
+}
+
+/*-Navbar Styles-*/
+
+.navbar {
+  height: 60px;
+  padding-left: 0;
+  padding-right: 0;
+  transition: all 0.5s;
+  background-color: #1d9701;
+  display: flex;
+  justify-content: space-between;
+}
+
+.main-navbar {
+  border-bottom: 1px solid rgba(204, 204, 204, 0.3);
+}
+
+.header-search {
+  border-radius: 15px;
+  border: 0;
+  min-width: 280px;
+}
+
+.dropdown-toggle {
+  outline: none !important;
+}
+
+/*-!Navbar Styles-*/
+
+#sidebar-wrapper {
+  box-shadow: 0px -5px 5px rgba(0, 0, 0, 0.05);
+  background-color: #434343;
+  height: 100%;
+  overflow-y: auto;
+  flex-shrink: 0;
+  padding-top: 50px;
+  .sidebar-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 0.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+      max-width: 100%;
+      max-height: 100%;
+    }
+  }
+}
+
+#sidebar-wrapper {
+  @media only screen and (max-width: 767px) {
+    width: 100%;
+  }
+
+  ul {
+    @media only screen and (max-width: 767px) {
+      display: flex;
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      margin-bottom: 0;
+      align-items: center;
+    }
+
+    li {
+      @media only screen and (max-width: 767px) {
+        flex: 0 0 auto;
+      }
+    }
+  }
+}
+
+.sidebar-wrapper li.side-active a {
+  font-weight: 600;
+  color: #54c014;
+  background-color: #525252;
+}
+
+.sidebar-wrapper li.side-active a:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 3px;
+  height: 100%;
+  top: 0;
+  background-color: #cccccc;
+  border-radius: 10px;
+}
+
+.sidebar-wrapper {
+  width: 15rem;
+}
+
+.sidebar-wrapper ul {
+  padding: 0;
+  list-style: none;
+}
+
+.sidebar-wrapper li a {
+  color: #fff;
+  text-decoration: none;
+  border-radius: 2px;
+  display: flex;
+  align-items: center;
+}
+
+.sidebar-wrapper li a:hover {
+  background-color: #f5fafc;
+}
+
+.sidebar-wrapper li.active > a {
+  background-color: #f5fafc;
+  font-weight: 700;
+}
+
+.sidebar-wrapper li a:hover > .icon::before,
+.sidebar-wrapper li a:hover,
+.sidebar-wrapper li.active > a,
+.sidebar-wrapper li.active > a .icon:before {
+  background-color: #525252;
+}
+
+.sidebar-menu-list .icon {
+  margin-right: 1.3rem;
+  color: #555555;
+  font-size: 1.2rem;
+}
+
+.sidebar-menu-list .icon:before {
+  color: #555555;
+}
+
+.sidebar-menu-list .list-group-item {
+  display: flex;
+  align-items: center;
+}
+
+.sidebar-menu-list .list-group-item:hover,
+.sidebar-menu-list .list-group-item.active {
+  background-color: #f5fafc;
+}
+
+.sidebar-menu-list .list-group-item:hover .icon:before,
+.sidebar-menu-list .list-group-item.active .icon:before {
+  color: #fff;
+}
+
+.sidebar-menu-list li > a {
+  padding: 0.75rem 1.2rem;
+  position: relative;
+}
+
+.sidebar-menu-list li.panel .sidebar-arrow {
+  transition: all 0.4s ease;
+  margin-right: 0;
+}
+
+.sidebar-menu-list li.panel .collapsed .sidebar-arrow:before {
+  transition: all 0.4s ease;
+}
+
+.sidebar-menu-list li .panel-collapse .panel-body li a {
+  font-size: 0.8rem;
+}
+
+.sidebar-menu-list li .sub-menu,
+.sidebar-menu-list li.active {
+  background-color: #f5fafc;
+}
+
+.sidebar-arrow:before {
+  font-size: 0.8rem;
+  transition: all 0.4s ease;
+}
+
+.page-content-wrapper {
+  padding: 4rem;
+}
+
+.p-datatable tr.highlight {
+  background-color: #e9e9e9;
+}
+
+.p-datatable .p-datatable-thead > tr > th {
+  background-color: #dfffd8;
+  padding: 0.5rem 0.8rem;
+}
+
+.p-datatable .p-datatable-tbody > tr > td {
+  padding: 0.5rem 0.8rem;
+}
+
+.p-paginator .p-paginator-pages .p-paginator-page {
+  min-width: 1.5rem;
+  height: 1.5rem;
+  border: 1px solid #bdbdbd;
+  border-radius: 0;
+}
+
+.p-paginator .p-paginator-pages .p-paginator-page.p-highlight {
+  background-color: transparent;
+  border-color: #1d9701;
+  border-width: 2px;
+}
+
+.inline-form {
+  .inline-form-row {
+    display: flex;
+    align-items: center;
+
+    .col-form-label {
+      width: 110px;
+      flex-shrink: 0;
+      color: #1d9701;
+      font-style: italic;
+      font-weight: 600;
+      font-size: 0.8rem;
+      @media only screen and (max-width: 767px) {
+        width: 70px;
+      }
+
+      &.inner-label {
+        width: 60px;
+        @media only screen and (max-width: 767px) {
+          width: 70px;
+        }
+      }
+    }
+
+    .col-form-content {
+      flex-grow: 1;
+    }
+  }
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.p-fileupload-basic,
+p-fileupload {
+  width: 100%;
+}
+
+.farmer-image-upload .p-fileupload-choose {
+  background-color: #1d9701 !important;
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+  outline: none;
+  border: 0;
+}
+
+.p-paginator .p-dropdown {
+  display: flex;
+  align-items: center;
+}
+
+.p-toast {
+  opacity: 1;
+}
+
+.p-calendar {
+  display: flex !important;
+}

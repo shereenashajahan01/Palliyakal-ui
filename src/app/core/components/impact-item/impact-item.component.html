@@ -1,0 +1,49 @@
+<div class="imapct-container">
+  <div
+    *ngIf="loss"
+    class="impact-item loss"
+    [ngStyle]="{ width: lossWidth + '%' }"
+  >
+    <div
+      [ngClass]="lossWidth < 10 ? 'rounded-value' : 'value'"
+      [ngStyle]="{ right: lossWidth < 10 ? '2px' : 'auto' }"
+    >
+      {{ loss }}
+    </div>
+  </div>
+  <div
+    *ngIf="target"
+    class="impact-item target"
+    [ngStyle]="{ width: targetWidth + '%' }"
+  >
+    <div
+      [ngClass]="targetWidth < 10 ? 'rounded-value' : 'value'"
+      [ngStyle]="{ left: targetWidth < 10 ? '2px' : 'auto' }"
+    >
+      {{ target }}
+    </div>
+  </div>
+  <div
+    *ngIf="additional"
+    class="impact-item additional"
+    [ngStyle]="{
+      width: additionalWidth + '%',
+      left:
+        'calc(' +
+        targetWidth +
+        '% + 25% - ' +
+        (targetWidth > 10 ? targetCharLength - targetWidth : 0) +
+        'px)'
+    }"
+  >
+    <div
+      [ngClass]="additionalWidth < 10 ? 'rounded-value' : 'value'"
+      [ngStyle]="{ left: targetCharLength - targetWidth + 'px' }"
+    >
+      {{ additional }}
+    </div>
+  </div>
+  <div class="total">
+    <div class="value">{{ total }}</div>
+  </div>
+</div>

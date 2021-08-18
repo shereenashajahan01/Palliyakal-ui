@@ -1,0 +1,55 @@
+.nav-bar {
+  width: 15rem;
+  background-color: #303030;
+  min-height: 100% !important;
+  position: fixed;
+  z-index: 10;
+  transition: all 0.3s;
+  padding-top: 68px;
+  top: 0;
+}
+
+.vertical-menu a {
+  text-decoration: none; /* Remove underline from links */
+  height: 47px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  color: lightgray;
+}
+
+.content {
+  margin-top: 13px;
+  margin-left: 15px;
+}
+
+/* Change the link color on hover */
+.vertical-menu a:hover {
+  background-color: rgba(82, 66, 66, 0.973);
+  color: white;
+}
+
+.vertical-menu a.active {
+  background-color: #5e5e5e;
+  color: white;
+  border-left: 3px solid darkred;
+  width: calc(100% - 3px);
+}
+
+@media (max-width: 1600px) {
+  .nav-bar {
+    zoom: 90%;
+  }
+}
+
+@media (max-width: 1400px) {
+  .nav-bar {
+    zoom: 75%;
+  }
+}
+
+@media (max-width: 1280px) {
+  .nav-bar {
+    zoom: 65%;
+  }
+}

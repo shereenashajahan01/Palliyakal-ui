@@ -1,0 +1,20 @@
+
+<div class="wrapper d-flex flex-column flex-md-row h-100" id="wrapper">
+  <ngx-ui-loader fgsColor="#1d9701" [hasProgressBar]="false"
+                 overlayColor="rgba(40,40,40,0.1)"></ngx-ui-loader>
+  <app-header *ngIf="showNavbar && !mainHeader"></app-header>
+  <app-main-header *ngIf="!showNavbar && !mainHeader"></app-main-header>
+  <app-layout-header *ngIf="mainHeader"></app-layout-header>
+
+  <app-navbar *ngIf="showNavbar && !mainHeader"></app-navbar>
+  <div
+    id="page-content-wrapper"
+    [ngClass]="showNavbar == true ? 'page-content-wrapper' : ''"
+  >
+    <router-outlet></router-outlet>
+    <app-loader></app-loader>
+    <div class="footer" *ngIf="mainHeader">
+<img class="footer-logo" src="/assets/images/k-disc.png"/>
+    </div>
+  </div>
+</div>
