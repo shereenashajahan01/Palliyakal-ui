@@ -144,7 +144,7 @@ export class QrCodeComponent implements OnInit {
     let formData = new FormData()
     formData.append('file', file)
     formData.append('code', event.code)
-    formData.append('a', `http://localhost:4000/qrCode/${event.code}`)
+    formData.append('a', `http://palliyakal.herokuapp.com/safetoeatkerala/${event.code}`)
     this.qrService.saveQr(formData).subscribe(
       (res: any) => {
         this.successNotification('QR code generated successfully')
