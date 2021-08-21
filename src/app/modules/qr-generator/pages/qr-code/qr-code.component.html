@@ -136,7 +136,7 @@
             <a  style="color: #0d6efd; " *ngIf="!rowData.qrCode" (click)="generateQR(rowData)"
               >Generate QR Code</a
             >
-           <a style="font-size: 11px;" *ngIf="rowData.qrCode" routerLink="/safetoeatkerala/{{rowData.code}}" target="_blank">http://localhost:4200/safetoeatkerala/{{rowData.code}}</a>
+                     <a style="font-size: 11px;" *ngIf="rowData.qrCode" routerLink="/safetoeatkerala/{{rowData.code}}" target="_blank">http://palliyakal.herokuapp.com/safetoeatkerala/{{rowData.code}}</a>
            <div style="width:2px;height:0px">
              <qrcode *ngIf="isQrcode && rowData.code==currentCode && !rowData.qrCode"
               [qrdata]="selectedCode"
