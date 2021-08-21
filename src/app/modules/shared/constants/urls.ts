@@ -1,2 +1,1 @@
-export const API_URL = "http://localhost:8080";
-// export const API_URL = `${window.location.protocol}//${window.location.host}`;
+export const API_URL = "https://palliyakal-backend.herokuapp.com";
