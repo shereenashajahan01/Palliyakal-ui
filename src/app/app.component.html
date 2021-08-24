@@ -1,5 +1,7 @@
 
 <div class="wrapper d-flex flex-column flex-md-row h-100" id="wrapper">
+    <p-toast [baseZIndex]="1030" position="top-right"></p-toast>
+
   <ngx-ui-loader fgsColor="#1d9701" [hasProgressBar]="false"
                  overlayColor="rgba(40,40,40,0.1)"></ngx-ui-loader>
   <app-header *ngIf="showNavbar && !mainHeader"></app-header>
