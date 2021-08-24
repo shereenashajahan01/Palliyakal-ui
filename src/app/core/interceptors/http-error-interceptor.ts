@@ -50,7 +50,12 @@ export class HttpErrorInterceptor implements HttpInterceptor {
           // server-side error
           // errorMessage = `Error Code: ${error.status}\nMessage: ${error.message}`;
         }
-        this._notificationSvc.error("Error", errorMessage);
+         this.messageService.add({
+          severity: 'error',
+          summary: 'Success',
+          detail: errorMessage,
+        })
+      
         return throwError(errorMessage);
       })
     );
