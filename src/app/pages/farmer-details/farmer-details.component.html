@@ -198,12 +198,12 @@
     <div class="col-md-4 col-sm-3 details" >
         <span *ngFor="let farmer of farmerNameList; let last = last">{{farmer }} <span *ngIf="!last">,</span></span>
     </div>
-    <div class="col-md-8 left-data" >Who belongs to SHG Area </div>
-    <div class="col-md-4 details">
+    <div class="col-md-8 left-data mt-3" >Who belongs to SHG Area </div>
+    <div class="col-md-4 details mt-3">
         <span *ngFor="let shgarea of shgAreaList; let last = last">{{shgarea }} <span *ngIf="!last">,</span></span>
     </div>
-    <div class="col-md-8 left-data" >Who produces</div>
-    <div class="col-md-4 details">    <span *ngFor="let product of productList; let last = last">{{product }} <span *ngIf="!last">,</span></span>
+    <div class="col-md-8 left-data mt-3" >Who produces</div>
+    <div class="col-md-4 details mt-3">    <span *ngFor="let product of productList; let last = last">{{product }} <span *ngIf="!last">,</span></span>
     </div>
     <div class="col-md-8 mt-3 left-data">Packed On </div>
     <div class="col-md-4 mt-3 details">{{farmerDetails[0].date |date:'dd/MM/yyyy'}}</div>
