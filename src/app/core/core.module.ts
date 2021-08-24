@@ -21,6 +21,7 @@ import { ImpactItemComponent } from "./components/impact-item/impact-item.compon
 import { MainHeaderComponent } from "./components/main-header/main-header.component";
 import {ToastModule} from 'primeng/toast';
 import { LayoutHeaderComponent } from './components/layout-header/layout-header.component';
+import { MessageService } from "primeng/api";
 
 @NgModule({
   declarations: [
@@ -51,12 +52,12 @@ import { LayoutHeaderComponent } from './components/layout-header/layout-header.
     LayoutHeaderComponent
   ],
   providers: [
-    NotificationService,
+    NotificationService,MessageService,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: HttpErrorInterceptor,
       multi: true,
-      deps: [NotificationService, LoaderService, SessionStorageService],
+      deps: [NotificationService, LoaderService, SessionStorageService,MessageService],
     },
   ],
 })
