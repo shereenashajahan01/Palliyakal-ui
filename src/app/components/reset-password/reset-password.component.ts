@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormGroup, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute ,Router} from '@angular/router';
 import { NgxUiLoaderService } from 'ngx-ui-loader';
 import { MessageService } from 'primeng/api';
 import { ConfirmPasswordValidator } from 'src/app/core/services/confirm-password-validator';
@@ -19,7 +19,7 @@ export class ResetPasswordComponent implements OnInit {
   hide: boolean = true;
   token="";
   userDetails:any
-  constructor(private fb: FormBuilder,private userService:UserService,private jwt: JWTService,
+  constructor(private router: Router,private fb: FormBuilder,private userService:UserService,private jwt: JWTService,
     private activatedRoute: ActivatedRoute,private ngxLoaderRef: NgxUiLoaderService,public messageServiceRef: MessageService) { 
     this.resetForm = this.fb.group({
       username: ["", [Validators.required, Validators.email]],
@@ -51,10 +51,11 @@ export class ResetPasswordComponent implements OnInit {
       username:this.resetForm.value.username,
       password:this.resetForm.value.password
     }
-  this.userService.resetPassword(payload).subscribe((res)=>{
+  this.userService.resetPassword(payload).subscribe((res:any)=>{
     if(res){
       this.ngxLoaderRef.stop();
-    this.successNotification(res)
+    this.successNotification(res.Response);
+    this.router.navigate(["/login"]);
     }
   },()=>{
     this.ngxLoaderRef.stop();
