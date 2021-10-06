@@ -114,7 +114,7 @@ export class QrCodeComponent implements OnInit {
     this.ngxLoaderRef.start()
     this.isQrcode = true
     this.currentCode = event.code
-    this.selectedCode = `http://localhost:4000/qrCode/${event.code}`
+        this.selectedCode = `http://palliyakal.herokuapp.com/safetoeatkerala/grCode/${event.code}`
     var self = this
     setTimeout(function () {
       self.getValue(event)
